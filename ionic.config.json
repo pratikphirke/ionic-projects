@@ -1,0 +1,8 @@
+{
+  "name": "LoginApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

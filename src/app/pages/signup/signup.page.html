@@ -1,0 +1,80 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Registration</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <form [formGroup]="myForm" (ngSubmit)="register()" novalidate>
+    <ion-list>
+    <ion-item class="itemform">
+      <ion-label position="floating">First Name:
+        <span *ngIf="submitted && f.fname.errors?.required" class="error-message">*</span>
+      </ion-label>
+      <ion-input type="text" formControlName="fname" [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" pattern="[a-z]{2,10}"></ion-input>
+      <span *ngIf="submitted && f.fname.errors?.pattern" class="error-message">invalid Name</span>
+    </ion-item>
+
+    <ion-item class="itemform">
+      <ion-label position="floating">Last Name:
+        <span *ngIf="submitted && f.lname.errors?.required" class="error-message">*</span>
+      </ion-label>
+      <ion-input type="text" formControlName="lname" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" pattern="[a-z]{2,10}"></ion-input>
+     <span *ngIf="submitted && f.lname.errors?.pattern" class="error-message">invalid Name</span>
+    </ion-item>
+
+    <ion-item class="itemform">
+      <ion-label position="floating">Mobile No:
+        <span *ngIf="submitted && f.mno.errors?.required" class="error-message">*</span>
+      </ion-label>
+      <ion-input type="number" formControlName="mno" [ngClass]="{ 'is-invalid': submitted && f.mno.errors }" pattern="[0][1-9]\d{9}$|^[1-9]\d{9}$"></ion-input>
+      <span *ngIf="submitted && f.mno.errors?.pattern" class="error-message">invalid Number</span>
+    </ion-item>
+
+    <ion-item class="itemform">
+      <ion-label position="floating">Email:
+        <span *ngIf="submitted && f.email.errors?.required" class="error-message">*</span>
+      </ion-label>
+      <ion-input type="email" formControlName="email"  [ngClass]="{ 'is-invalid': submitted && f.email.errors }" pattern="^[a-zA-Z0-9._]+[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"></ion-input>
+      <span *ngIf="submitted && f.email.errors?.pattern" class="error-message">invalid e-mail</span>
+    </ion-item>
+
+    <ion-item class="itemform">
+      <ion-label position="floating">Address:
+        <span *ngIf="submitted && f.addr.errors?.required" class="error-message">*</span>
+      </ion-label>
+      <ion-textarea type="text"  rows="2" cols="5" autocomplete="off"  formControlName="addr" [ngClass]="{ 'is-invalid': submitted && f.addr.errors }"  pattern="[a-z]{2,10}"></ion-textarea>
+      <span *ngIf="submitted && f.addr.errors?.pattern" class="error-message">Invalid Adress</span>
+    </ion-item>
+
+    <ion-item class="itemform">
+      <ion-label position="floating">Password
+        <span *ngIf="submitted && f.password.errors?.required" class="error-message">*</span>
+      </ion-label>
+      <ion-input type="password" formControlName="password" [ngClass]="{ 'is-invalid': submitted && f.password.errors }"></ion-input>
+      <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+        <div *ngIf="f.password.errors.minlength" class="error-message">weak password</div>
+      </div>
+    </ion-item>
+	
+    <ion-item class="itemform">
+      <ion-label position="floating">Confirm Password
+        <span *ngIf="submitted && f.conf_pass.errors?.required" class="error-message">*</span>
+      </ion-label>
+      <ion-input type="password" formControlName="conf_pass" [ngClass]="{ 'is-invalid': submitted && f.conf_pass.errors }"></ion-input>
+      <div *ngIf="submitted && f.conf_pass.errors" class="invalid-feedback">
+        <div *ngIf="f.conf_pass.errors.equalto" class="error-message">Password Not Matched</div>
+      </div>
+
+  </ion-item>
+    <ion-item lines='none'>
+      <h5> Already have an account?</h5> <a routerLink='/login'><b> Log in </b></a>
+      </ion-item>
+      </ion-list>
+      <ion-button expand="block" share="round" type="submit"  color="success" >Registration</ion-button>
+    <!---[disabled]="!myForm.valid" -->
+      </form>
+      </ion-content>

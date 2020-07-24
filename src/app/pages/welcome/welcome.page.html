@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Made In India</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+  </ion-buttons>  
+  </ion-toolbar>
+</ion-header>
+<ion-content fullscreen>
+
+  <ion-progress-bar type="indeterminate" reversed="true"></ion-progress-bar>
+ 
+    <ion-card>
+      
+      <div class="login-header">
+      <img src="assets\icon\favicon.png" class="logo-img"/>
+    </div>
+      <ion-card-header >
+        <ion-card-title class="shop">Made In India</ion-card-title>
+       <ion-card-subtitle class="heart"><b>What you want..!!</b></ion-card-subtitle> 
+       <ion-card-subtitle color="#CCC"><h5><b>** WELCOME **</b></h5> </ion-card-subtitle> 
+     
+       <ion-card-subtitle class="user"><h3><b> {{Tfname}}  {{Tlname}}</b></h3> </ion-card-subtitle> 
+       <ion-card-subtitle class="user"><h3><b>{{Temail}}</b></h3> </ion-card-subtitle> 
+       <ion-card-subtitle class="user"><h3><b>{{Tmobile}}</b></h3> </ion-card-subtitle> 
+       <ion-card-subtitle class="user"><h3><b> {{Tadress}}</b></h3></ion-card-subtitle> 
+    </ion-card-header> 
+    </ion-card>
+    <ion-item  class="ion-text-wrap">
+    <ion-grid> 
+    <ion-row>
+        <ion-col size="6"  class="ion-align-self-center">
+          <ion-label class ="heart"><h2><b>SHOP..!!</b></h2></ion-label>
+            <ion-label class ="heart"><h3><b>SHOP..!!</b></h3></ion-label>
+           <ion-label class ="heart"><h4><b>SHOP..!!</b></h4></ion-label>
+           <ion-label class ="heart"><h5><b>SHOP..!!</b></h5></ion-label>
+           <ion-label class ="heart"><h6><b>SHOP..!!</b></h6></ion-label>
+      </ion-col>
+        <ion-col size="6" class="ion-align-self-center">
+          <ion-button  expand="block" share="round"  type="submit" color="primary" (click)="ShopNow()">SHOP NOW</ion-button>
+        </ion-col>
+      </ion-row>
+  </ion-grid>
+</ion-item>
+  </ion-content>
+    
+  

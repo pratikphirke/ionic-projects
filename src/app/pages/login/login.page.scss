@@ -1,0 +1,44 @@
+.login-header{
+    --theme-color: #ffce00;
+    background: var(--theme-color);
+
+}
+.login-header:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15%;
+    width: 0 ;
+    height: 0;
+    border: 20px solid transparent;
+   border-top-color: #ffce00;
+    border-bottom: 0;
+    margin-left: -15px;
+    margin-bottom: -15px;
+
+}
+.logo-img{
+
+    display: block;
+    width: 120px;
+    margin: 0 auto;
+    text-align: center;
+}
+[tranceparent]{
+
+    background: transparent   
+}
+[alert] {
+	font-size: 0.9rem;
+	text-align: center;
+	padding: 0.4rem !important;
+	margin: 0 10% 1% 10%;
+	border: 1px solid transparent;
+	border-radius: 0.4rem;
+}
+
+[alert-danger] {
+	color: #a94442;
+	background-color: #f2dede;
+	border-color: #ebccd1;
+}

@@ -1,0 +1,79 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Cart Details</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu">
+      </ion-menu-button>
+  </ion-buttons>  
+  </ion-toolbar>
+</ion-header>
+
+
+
+<ion-content fullscreen>
+ 
+  <div class="ion-padding">
+ 
+    <ion-list>
+      <ion-item *ngFor="let p of cart" class="ion-text-wrap">
+        <ion-card class="ion-align-items-center">
+        <ion-grid> 
+       
+          <ion-row>
+            <ion-col size="2" class="ion-align-self-center">
+              <ion-button color="medium" fill="clear" (click)="decreaseCartItem(p)">
+                <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-col>
+ 
+            <ion-col size="1" class="ion-align-self-center">
+             <h4><b> {{ p.amount }}</b></h4> 
+          </ion-col>
+ 
+            <ion-col size="2" class="ion-align-self-center">
+              <ion-button color="medium" fill="clear" (click)="increaseCartItem(p)">
+                <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-col>
+ 
+            <ion-col size="7" class="ion-text-end">
+              <ion-button color="black" fill="clear" (click)="removeCartItem(p)">
+                <ion-icon name="close-circle" slot="icon-only"></ion-icon>
+              </ion-button>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-align-self-center">
+            <ion-col size="6">
+              <img [src] ="p.imgUrl"/>  
+              <ion-label class="prodname"><h3><b> {{ p.name }} </b></h3></ion-label>
+              <ion-label><h5> {{ p.desc2 }}</h5></ion-label>
+              <ion-label><h5> {{ p.desc3 }}</h5></ion-label>
+             
+          </ion-col>
+            <ion-col size="6" class="ion-text-center">
+              
+             <h3>{{ p.amount * p.price | currency:'INR' }}</h3>
+            </ion-col>
+          </ion-row>
+         
+        </ion-grid>
+      </ion-card>
+      </ion-item>
+      <ion-item>
+        <ion-grid>
+          <ion-row>
+            <ion-col size="9">
+              Total:
+            </ion-col>
+            <ion-col size="3" class="ion-text-end">
+              {{ getTotal() | currency:'INR' }}
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-item>
+    </ion-list>
+    <ion-button  expand="block" share="round"  type="submit"  (click)="Payment()">Place Order</ion-button>
+    
+  </div>
+ 
+</ion-content>

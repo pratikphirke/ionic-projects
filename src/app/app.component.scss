@@ -1,0 +1,32 @@
+:root {
+    /** primary **/
+
+    /** primary end **/
+    --ion-color-LoginApp: #ffcc66;
+    --ion-color-LoginApp-rgb: 255,204,102;
+    --ion-color-LoginApp-contrast: #000000;
+    --ion-color-LoginApp-contrast-rgb: 0,0,0;
+    --ion-color-LoginApp-shade: #e0b45a;
+    --ion-color-LoginApp-tint: #ffd175;
+    
+    ion-tab-button.tab-selected {
+    ion-icon, ion-label {
+    color: var(--ion-color-LoginApp) !important;
+    --ion-color-base: var(--ion-color-LoginApp) !important;
+    }
+    }
+    }
+    
+    .ion-color-LoginApp {
+    --ion-color-base: var(--ion-color-LoginApp);
+    --ion-color-base-rgb: var(--ion-color-LoginApp-rgb);
+    --ion-color-contrast: var(--ion-color-LoginApp-contrast);
+    --ion-color-contrast-rgb: var(--ion-color-LoginApp-contrast-rgb);
+    --ion-color-shade: var(--ion-color-LoginApp-shade);
+    --ion-color-tint: var(--ion-color-LoginApp-tint);
+    }
+    .login-header{
+        --theme-color: #ffce00;
+        background: var(--theme-color);
+    
+    }
