@@ -12,8 +12,7 @@ export class HomePage {
     speed: 400
     };
   constructor(private router: Router,public menu: MenuController) {
-
-    this.menu.enable(false, 'main-menu');
+//this.menu.enable(false, 'main-menu');
     this.menu.enable(false, 'main-menu');
    }
 

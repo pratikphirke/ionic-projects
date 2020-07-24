@@ -14,7 +14,7 @@
       <ion-label position="floating">First Name:
         <span *ngIf="submitted && f.fname.errors?.required" class="error-message">*</span>
       </ion-label>
-      <ion-input type="text" formControlName="fname" [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" pattern="[a-z]{2,10}"></ion-input>
+      <ion-input type="text" formControlName="fname" [ngClass]="{ 'is-invalid': submitted && f.fname.errors }" pattern="[a-zA-Z ]*"></ion-input>
       <span *ngIf="submitted && f.fname.errors?.pattern" class="error-message">invalid Name</span>
     </ion-item>
 
@@ -22,7 +22,7 @@
       <ion-label position="floating">Last Name:
         <span *ngIf="submitted && f.lname.errors?.required" class="error-message">*</span>
       </ion-label>
-      <ion-input type="text" formControlName="lname" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" pattern="[a-z]{2,10}"></ion-input>
+      <ion-input type="text" formControlName="lname" [ngClass]="{ 'is-invalid': submitted && f.lname.errors }" pattern="[a-zA-Z ]*"></ion-input>
      <span *ngIf="submitted && f.lname.errors?.pattern" class="error-message">invalid Name</span>
     </ion-item>
 
@@ -46,7 +46,7 @@
       <ion-label position="floating">Address:
         <span *ngIf="submitted && f.addr.errors?.required" class="error-message">*</span>
       </ion-label>
-      <ion-textarea type="text"  rows="2" cols="5" autocomplete="off"  formControlName="addr" [ngClass]="{ 'is-invalid': submitted && f.addr.errors }"  pattern="[a-z]{2,10}"></ion-textarea>
+      <ion-textarea type="text"  rows="2" cols="5" autocomplete="off"  formControlName="addr" [ngClass]="{ 'is-invalid': submitted && f.addr.errors }"  pattern="[a-zA-Z ]*"></ion-textarea>
       <span *ngIf="submitted && f.addr.errors?.pattern" class="error-message">Invalid Adress</span>
     </ion-item>
 
